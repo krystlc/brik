@@ -1,6 +1,8 @@
 import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
 import pkg from './package'
 
+const contentful = require('contentful')
+
 export default {
   mode: 'universal',
 
@@ -78,6 +80,41 @@ export default {
           exclude: /(node_modules)/
         })
       }
+    }
+  },
+  generate: {
+    routes: async () => {
+      const config = {
+        space: process.env.CTF_SPACE_ID,
+        accessToken: process.env.CTF_CD_ACCESS_TOKEN
+      }
+      const client = await contentful.createClient(config)
+
+      let page = client.getEntries({
+        content_type: 'page'
+      }).then(res => res.items.map(entry => {
+        return {
+          route: entry.fields.slug,
+          payload: entry
+        }
+      }))
+      let prototype = client.getEntries({
+        content_type: 'prototype'
+      }).then(res => res.items.map(entry => {
+        return {
+          route: `/prototype/${entry.fields.slug}`,
+          payload: entry
+        }
+      }))
+      let blog = client.getEntries({
+        content_type: 'blogPost'
+      }).then(res => res.items.map(entry => {
+        return {
+          route: `/blog/${entry.fields.slug}`,
+          payload: entry
+        }
+      }))
+      return Promise.all([page, prototype, page]).then(res => [...res[0], ...res[1], ...res[2]])
     }
   }
 }

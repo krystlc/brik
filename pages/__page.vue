@@ -24,6 +24,18 @@ export default {
   },
   destroyed() {
     this.$store.dispatch('entry/clearCurrentEntry')
+  },
+  head() {
+    return {
+      title: `${this.page.fields.title} - Brik Labs`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.page.fields.shortDescription
+        }
+      ]
+    }
   }
 }
 </script>

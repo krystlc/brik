@@ -21,6 +21,18 @@ export default {
   },
   async fetch({ store, params }) {
     await store.dispatch('entry/getEntryBySlug', 'prototype', params.slug)
+  },
+  head() {
+    return {
+      title: `${this.currentPrototype.fields.title} - Brik Labs`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.currentPrototype.fields.shortDescription
+        }
+      ]
+    }
   }
 }
 </script>

@@ -84,6 +84,8 @@ export default {
     }
   },
   generate: {
+    subFolders: false,
+    fallback: true,
     routes: async () => {
       const config = {
         space: process.env.CTF_SPACE_ID,

@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -77,14 +77,29 @@ export default {
         },
         {
           icon: 'bubble_chart',
-          title: 'Inspire',
-          to: '/inspire'
+          title: 'Mission',
+          to: '/mission'
+        },
+        {
+          icon: 'bubble_chart',
+          title: 'Timeline',
+          to: '/timeline'
+        },
+        {
+          icon: 'bubble_chart',
+          title: 'Prototypes',
+          to: '/prototype'
+        },
+        {
+          icon: 'bubble_chart',
+          title: 'Blog',
+          to: '/blog'
         }
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'Brik Labs'
     }
   }
 }

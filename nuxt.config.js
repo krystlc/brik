@@ -93,32 +93,48 @@ export default {
       }
       const client = await contentful.createClient(config)
 
-      let page = client.getEntries({
-        content_type: 'page',
-        'fields.simple': true
-      }).then(res => res.items.map(entry => {
-        return {
-          route: entry.fields.slug,
-          payload: entry
-        }
-      }))
-      let prototype = client.getEntries({
-        content_type: 'prototype'
-      }).then(res => res.items.map(entry => {
-        return {
-          route: `/prototype/${entry.fields.slug}`,
-          payload: entry
-        }
-      }))
-      let blog = client.getEntries({
-        content_type: 'blogPost'
-      }).then(res => res.items.map(entry => {
-        return {
-          route: `/blog/${entry.fields.slug}`,
-          payload: entry
-        }
-      }))
-      return Promise.all([page, prototype, blog]).then(res => [...res[0], ...res[1], ...res[2]])
+      const page = client
+        .getEntries({
+          content_type: 'page',
+          'fields.simple': true
+        })
+        .then(res =>
+          res.items.map(entry => {
+            return {
+              route: entry.fields.slug,
+              payload: entry
+            }
+          })
+        )
+      const prototype = client
+        .getEntries({
+          content_type: 'prototype'
+        })
+        .then(res =>
+          res.items.map(entry => {
+            return {
+              route: `/prototype/${entry.fields.slug}`,
+              payload: entry
+            }
+          })
+        )
+      const blog = client
+        .getEntries({
+          content_type: 'blogPost'
+        })
+        .then(res =>
+          res.items.map(entry => {
+            return {
+              route: `/blog/${entry.fields.slug}`,
+              payload: entry
+            }
+          })
+        )
+      return Promise.all([page, prototype, blog]).then(res => [
+        ...res[0],
+        ...res[1],
+        ...res[2]
+      ])
     }
   }
 }

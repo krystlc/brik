@@ -1,6 +1,7 @@
 import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
 import pkg from './package'
 
+require('dotenv').config()
 const contentful = require('contentful')
 
 export default {
@@ -89,9 +90,11 @@ export default {
         accessToken: process.env.CTF_CD_ACCESS_TOKEN
       }
       const client = await contentful.createClient(config)
+      console.log(config, client)
 
       let page = client.getEntries({
-        content_type: 'page'
+        content_type: 'page',
+        'simple': true
       }).then(res => res.items.map(entry => {
         return {
           route: entry.fields.slug,

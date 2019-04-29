@@ -20,7 +20,10 @@ export default {
     }
   },
   async fetch({ store, params }) {
-    await store.dispatch('entry/getEntryBySlug', 'blogPost', params.slug)
+    await store.dispatch('entry/getEntryBySlug', {
+      type: 'blogPost',
+      slug: params._slug
+    })
   },
   head() {
     return {

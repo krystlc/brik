@@ -20,7 +20,10 @@ export default {
     }
   },
   async fetch({ store, params }) {
-    await store.dispatch('entry/getEntryBySlug', 'page', params.slug)
+    await store.dispatch('entry/getEntryBySlug', {
+      type: 'page',
+      slug: params._slug
+    })
   },
   destroyed() {
     this.$store.dispatch('entry/clearCurrentEntry')

@@ -15,11 +15,11 @@ export const mutations = {
 }
 
 export const actions = {
-  async getEntryBySlug({ commit }, type, slug) {
+  async getEntryBySlug({ commit }, params) {
     commit('setLoading', true)
     const response = await client.getEntries({
-      content_type: type,
-      'fields.slug': slug
+      'fields.slug': params.slug,
+      content_type: params.type
     })
     commit('setCurrentEntry', response.items[0])
     commit('setLoading', false)

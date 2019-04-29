@@ -20,7 +20,10 @@ export default {
     }
   },
   async fetch({ store, params }) {
-    await store.dispatch('entry/getEntryBySlug', 'prototype', params.slug)
+    await store.dispatch('entry/getEntryBySlug', {
+      type: 'prototype',
+      slug: params._slug
+    })
   },
   head() {
     return {

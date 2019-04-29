@@ -13,14 +13,14 @@
 export default {
   computed: {
     currentPost() {
-      return this.$store.state.post.currentPost
+      return this.$store.state.entry.currentEntry
     },
     isLoading() {
-      return this.$store.state.post.isLoading
+      return this.$store.state.entry.isLoading
     }
   },
   async fetch({ store, params }) {
-    await store.dispatch('post/getPostBySlug', params.slug)
+    await store.dispatch('entry/getEntryBySlug', 'blogPost', params.slug)
   }
 }
 </script>

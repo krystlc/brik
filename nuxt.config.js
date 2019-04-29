@@ -95,7 +95,6 @@ export default {
         content_type: 'page',
         'fields.simple': true
       }).then(res => res.items.map(entry => {
-        console.log(entry)
         return {
           route: entry.fields.slug,
           payload: entry

@@ -90,12 +90,12 @@ export default {
         accessToken: process.env.CTF_CD_ACCESS_TOKEN
       }
       const client = await contentful.createClient(config)
-      console.log(config, client)
 
       let page = client.getEntries({
         content_type: 'page',
-        'simple': true
+        'fields.simple': true
       }).then(res => res.items.map(entry => {
+        console.log(entry)
         return {
           route: entry.fields.slug,
           payload: entry
@@ -117,7 +117,7 @@ export default {
           payload: entry
         }
       }))
-      return Promise.all([page, prototype, page]).then(res => [...res[0], ...res[1], ...res[2]])
+      return Promise.all([page, prototype, blog]).then(res => [...res[0], ...res[1], ...res[2]])
     }
   }
 }

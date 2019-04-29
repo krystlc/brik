@@ -1,10 +1,13 @@
 <template>
   <v-layout>
-    <v-flex>
+    <v-flex v-if="!isLoading">
       <h1>{{ entry.fields.title }}</h1>
       <div>
         <pre>{{ entry.fields.copy.content }}</pre>
       </div>
+    </v-flex>
+    <v-flex v-else>
+      <div>... loading</div>
     </v-flex>
   </v-layout>
 </template>

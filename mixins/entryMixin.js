@@ -7,12 +7,9 @@ export default {
       return this.$store.state.entry.isLoading
     }
   },
-  destroyed() {
-    this.$store.dispatch('entry/clearCurrentEntry')
-  },
   head() {
     return {
-      title: `${this.entry.fields.title} - Brik Labs`,
+      title: `${this.entry.fields.title} | Brik Labs`,
       meta: [
         {
           hid: 'description',

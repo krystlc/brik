@@ -23,9 +23,5 @@ export const actions = {
     })
     commit('setCurrentEntry', response.items[0])
     commit('setLoading', false)
-  },
-  clearCurrentEntry({ commit }) {
-    commit('setCurrentEntry', {})
-    commit('setLoading', true)
   }
 }

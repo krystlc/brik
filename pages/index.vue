@@ -5,6 +5,13 @@
         <logo />
         <vuetify-logo />
       </div>
+      <ul>
+        <li v-for="(post, i) in posts" :key="i">
+          <nuxt-link :to="`/blog/${post.fields.slug}`">{{
+            post.fields.title
+          }}</nuxt-link>
+        </li>
+      </ul>
       <v-card>
         <v-card-title class="headline"
           >Welcome to the Vuetify + Nuxt.js template</v-card-title

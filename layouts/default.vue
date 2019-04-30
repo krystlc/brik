@@ -1,6 +1,7 @@
 <template>
   <v-app>
-    <layout-header />
+    <layout-drawer />
+    <layout-toolbar />
     <v-content>
       <nuxt />
     </v-content>
@@ -9,10 +10,11 @@
 </template>
 
 <script>
-import LayoutHeader from '@/components/ui/LayoutHeader'
+import LayoutToolbar from '@/components/ui/LayoutToolbar'
+import LayoutDrawer from '@/components/ui/LayoutDrawer'
 import LayoutFooter from '@/components/ui/LayoutFooter'
 
 export default {
-  components: { LayoutHeader, LayoutFooter }
+  components: { LayoutToolbar, LayoutDrawer, LayoutFooter }
 }
 </script>

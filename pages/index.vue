@@ -1,87 +1,129 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
-      <div class="text-xs-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <ul>
-        <li v-for="(post, i) in posts" :key="i">
-          <nuxt-link :to="`/blog/${post.fields.slug}`">{{
-            post.fields.title
-          }}</nuxt-link>
-        </li>
-      </ul>
-      <v-card>
-        <v-card-title class="headline"
-          >Welcome to the Vuetify + Nuxt.js template</v-card-title
-        >
-        <v-card-text>
+  <v-content>
+    <v-container class="light-green accent-2 pa-0" fluid>
+      <v-layout>
+        <v-flex>
+          <v-container>
+            <v-layout>
+              <v-flex xs12 sm6>
+                <hgroup>
+                  <h1>One codebase.<br />Any platform.</h1>
+                  <p>{{ entry.fields.shortDescription }}</p>
+                  <v-btn round large>Get started ></v-btn>
+                </hgroup>
+                <p>{{ entry.fields.copy.content[0].content[0].value }}</p>
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-flex>
+      </v-layout>
+    </v-container>
+    <v-container>
+      <v-layout>
+        <v-flex>
+          <h2>Interested in the differences between hybrid and native apps?</h2>
           <p>
-            Vuetify is a progressive Material Design component framework for
-            Vue.js. It was designed to empower developers to create amazing
-            applications.
+            Our new eBook breaks down everything you need to know—all the
+            myths,lies,and misconceptions.
           </p>
+          <v-btn round>Get started ></v-btn>
+        </v-flex>
+      </v-layout>
+    </v-container>
+    <v-container>
+      <v-layout align-center justify-center>
+        <v-flex text-xs-center xs10>
+          <h2>An app development platform</h2>
           <p>
-            For more information on Vuetify, check out the
-            <a href="https://vuetifyjs.com" target="_blank">documentation</a>.
+            We help developers build and deploy cross-platform apps. From open
+            source to premium services, Ionic makes app creation lightning fast.
           </p>
-          <p>
-            If you have questions, please join the official
-            <a href="https://chat.vuetifyjs.com/" target="_blank" title="chat"
-              >discord</a
-            >.
-          </p>
-          <p>
-            Find a bug? Report it on the github
-            <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              title="contribute"
-              >issue board</a
-            >.
-          </p>
-          <p>
-            Thank you for developing with Vuetify and I look forward to bringing
-            more exciting features in the future.
-          </p>
-          <div class="text-xs-right">
-            <em>
-              <small>&mdash; John Leider</small>
-            </em>
-          </div>
-          <hr class="my-3" />
-          <a href="https://nuxtjs.org/" target="_blank">Nuxt Documentation</a>
-          <br />
-          <a href="https://github.com/nuxt/nuxt.js" target="_blank"
-            >Nuxt GitHub</a
-          >
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn color="primary" flat nuxt to="/inspire">Continue</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+        </v-flex>
+      </v-layout>
+    </v-container>
+    <v-container>
+      <v-layout :column="$vuetify.breakpoint.xsOnly" text-xs-center>
+        <v-flex>
+          3 column description
+        </v-flex>
+        <v-flex>
+          3 column description
+        </v-flex>
+        <v-flex>
+          3 column description
+        </v-flex>
+      </v-layout>
+    </v-container>
+    <v-container>
+      <v-layout>
+        <v-flex>
+          about briks
+        </v-flex>
+      </v-layout>
+    </v-container>
+    <v-container>
+      <v-layout>
+        <v-flex>
+          about briks
+        </v-flex>
+      </v-layout>
+    </v-container>
+    <v-container>
+      <v-layout>
+        <v-flex>
+          about briks
+        </v-flex>
+      </v-layout>
+    </v-container>
+    <v-container>
+      <v-layout column justify-center align-center>
+        <v-flex xs8 text-xs-center>
+          <h2>Latest news</h2>
+          <p>Keep upto date blah blah.</p>
+        </v-flex>
+        <v-flex xs12>
+          <ul>
+            <li v-for="(post, i) in posts" :key="i">
+              <nuxt-link :to="`/blog/${post.fields.slug}`">{{
+                post.fields.title
+              }}</nuxt-link>
+            </li>
+          </ul>
+        </v-flex>
+      </v-layout>
+    </v-container>
+    <v-container>
+      <v-layout>
+        <v-flex>
+          call to action!
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </v-content>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import mixin from '@/mixins/entryMixin'
 
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  },
+  layout: 'landing',
+  mixins: [mixin],
   computed: {
     posts() {
       return this.$store.state.posts.posts
     }
   },
   async fetch({ store, params }) {
+    await store.dispatch('entry/getEntryBySlug', {
+      type: 'page',
+      slug: 'home'
+    })
     await store.dispatch('posts/getPosts', params.slug)
+  },
+  head() {
+    return {
+      title: 'Brik Labs'
+    }
   }
 }
 </script>

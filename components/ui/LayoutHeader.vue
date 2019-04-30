@@ -18,11 +18,17 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar>
+    <v-toolbar
+      v-scroll="onScroll"
+      app
+      dark
+      :flat="!isScrolling"
+      :color="!isScrolling ? 'transparent' : 'secondary'"
+    >
       <v-toolbar-title>
         <router-link to="/">Brik Labs</router-link>
       </v-toolbar-title>
-      <v-toolbar-items class="hidden-sm-and-down">
+      <v-toolbar-items v-if="$vuetify.breakpoint.mdAndUp">
         <v-btn
           v-for="(item, i) in items"
           :key="i"
@@ -30,11 +36,16 @@
           router
           exact
           flat
-          >{{ item.title }}</v-btn
         >
+          <span v-text="item.title" />
+        </v-btn>
       </v-toolbar-items>
-      <v-spacer />
-      <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer" />
+      <template v-else>
+        <v-spacer />
+        <v-btn @click="drawer = !drawer">
+          <v-icon>menu</v-icon>
+        </v-btn>
+      </template>
     </v-toolbar>
   </header>
 </template>

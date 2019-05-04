@@ -1,8 +1,7 @@
-import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
+import * as contentful from 'contentful'
 import pkg from './package'
 
 require('dotenv').config()
-const contentful = require('contentful')
 
 export default {
   mode: 'universal',
@@ -23,6 +22,18 @@ export default {
         rel: 'stylesheet',
         href:
           'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css',
+        integrity:
+          'sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf',
+        crossorigin: 'anonymous'
       }
     ]
   },
@@ -35,12 +46,12 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~/assets/style/app.styl'],
+  css: ['~/assets/style/app.scss'],
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/vuetify'],
+  plugins: [],
 
   /*
    ** Nuxt.js modules
@@ -61,8 +72,6 @@ export default {
    ** Build configuration
    */
   build: {
-    transpile: ['vuetify/lib'],
-    plugins: [new VuetifyLoaderPlugin()],
     loaders: {
       stylus: {
         import: ['~assets/style/variables.styl']

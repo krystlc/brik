@@ -1,28 +1,16 @@
 <template>
-  <v-navigation-drawer v-model="drawer" fixed temporary right>
-    <v-list>
-      <v-list-tile>
-        <v-spacer />
-        <v-btn icon @click="toggle">
-          <v-icon>close</v-icon>
-        </v-btn>
-      </v-list-tile>
-      <v-list-tile
-        v-for="(item, i) in items"
-        :key="i"
-        :to="item.to"
-        router
-        exact
-      >
-        <v-list-tile-action>
-          <v-icon>{{ item.icon }}</v-icon>
-        </v-list-tile-action>
-        <v-list-tile-content>
-          <v-list-tile-title v-text="item.title" />
-        </v-list-tile-content>
-      </v-list-tile>
-    </v-list>
-  </v-navigation-drawer>
+  <aside v-if="drawer">
+    <button @click="toggle">x</button>
+    <div>
+      <ul>
+        <li v-for="(item, i) in items" :key="i">
+          <router-link :to="item.to" router exact>
+            <span v-text="item.title" />
+          </router-link>
+        </li>
+      </ul>
+    </div>
+  </aside>
 </template>
 
 <script>

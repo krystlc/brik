@@ -1,12 +1,12 @@
 <template>
-  <v-app>
+  <div>
     <layout-drawer />
     <layout-toolbar />
-    <v-content>
+    <main>
       <nuxt />
-    </v-content>
+    </main>
     <layout-footer />
-  </v-app>
+  </div>
 </template>
 
 <script>

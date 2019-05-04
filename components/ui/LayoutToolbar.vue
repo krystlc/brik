@@ -1,13 +1,23 @@
 <template>
-  <v-toolbar app flat>
-    <v-toolbar-title>
-      <router-link to="/">Brik Labs</router-link>
-    </v-toolbar-title>
-    <v-spacer />
-    <v-btn icon @click="toggle">
-      <v-icon>menu</v-icon>
-    </v-btn>
-  </v-toolbar>
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <router-link class="navbar-item" to="/">Brik Labs</router-link>
+        <span class="navbar-burger burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <button @click="toggle">menu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
 </template>
 
 <script>

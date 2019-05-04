@@ -1,17 +1,20 @@
 <template>
-  <v-content>
-    <v-container>
-      <v-layout>
-        <v-flex d-flex xs12 sm8>
+  <main class="hero-body">
+    <section id="hero" class="container">
+      <div class="columns is-desktop">
+        <div class="column is-one-third">
           <hgroup>
-            <h1 class="display-2">{{ entry.fields.shortDescription }}</h1>
-            <p>{{ entry.fields.copy.content[0].content[0].value }}</p>
-            <v-btn round large>Get started ></v-btn>
+            <h1 class="title">{{ entry.fields.shortDescription }}</h1>
+            <h2 class="subtitle">
+              {{ entry.fields.copy.content[0].content[0].value }}
+            </h2>
+            <button>Learn more</button>
+            <button>another thing</button>
           </hgroup>
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </v-content>
+        </div>
+      </div>
+    </section>
+  </main>
 </template>
 
 <script>

@@ -3,7 +3,7 @@
     <div class="container">
       <div class="navbar-brand">
         <router-link class="navbar-item" to="/">Brik Labs</router-link>
-        <span class="navbar-burger burger">
+        <span class="navbar-burger burger" @click="toggle">
           <span></span>
           <span></span>
           <span></span>
@@ -11,8 +11,10 @@
       </div>
       <div class="navbar-menu">
         <div class="navbar-end">
-          <div class="navbar-item">
-            <button @click="toggle">menu</button>
+          <div v-for="(item, i) in items" :key="i" class="navbar-item">
+            <router-link :to="item.to" router exact>
+              <span v-text="item.title" />
+            </router-link>
           </div>
         </div>
       </div>
@@ -22,6 +24,11 @@
 
 <script>
 export default {
+  computed: {
+    items() {
+      return this.$store.state.app.items
+    }
+  },
   methods: {
     toggle() {
       this.$store.commit('app/toggleDrawer')

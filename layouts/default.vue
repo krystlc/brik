@@ -2,7 +2,7 @@
   <div>
     <layout-drawer />
     <layout-toolbar />
-    <main>
+    <main class="container">
       <nuxt />
     </main>
     <layout-footer />

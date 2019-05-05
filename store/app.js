@@ -3,19 +3,9 @@ export const state = () => ({
   drawer: false,
   items: [
     {
-      icon: 'apps',
-      title: 'Welcome',
-      to: '/'
-    },
-    {
       icon: 'bubble_chart',
       title: 'Mission',
       to: '/mission'
-    },
-    {
-      icon: 'bubble_chart',
-      title: 'Timeline',
-      to: '/timeline'
     },
     {
       icon: 'bubble_chart',
@@ -24,8 +14,23 @@ export const state = () => ({
     },
     {
       icon: 'bubble_chart',
-      title: 'Blog',
-      to: '/blog'
+      title: 'News',
+      to: '/news'
+    },
+    {
+      icon: '',
+      title: 'Contact',
+      to: '/contact'
+    }
+  ],
+  socials: [
+    {
+      icon: 'twitter',
+      to: '/'
+    },
+    {
+      icon: 'kickstarter-k',
+      to: '/'
     }
   ]
 })

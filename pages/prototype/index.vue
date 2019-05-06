@@ -1,16 +1,40 @@
 <template>
-  <v-layout>
-    <v-flex>
-      <h1>Prototypes</h1>
-      <ul>
-        <li v-for="(prototype, i) in prototypes" :key="i">
-          <nuxt-link :to="`/prototype/${prototype.fields.slug}`">
-            {{ prototype.fields.title }}
-          </nuxt-link>
-        </li>
-      </ul>
-    </v-flex>
-  </v-layout>
+  <main id="prototypes">
+    <section class="section">
+      <div class="container">
+        <h1 class="title is-1 has-text-centered">Prototypes</h1>
+        <div class="columns is-centered">
+          <div
+            v-for="(prototype, i) in prototypes"
+            :key="i"
+            class="column is-one-third"
+          >
+            <nuxt-link
+              :to="`/prototype/${prototype.fields.slug}`"
+              class="card is-block"
+            >
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img
+                    src="https://bulma.io/images/placeholders/1280x960.png"
+                    alt="Placeholder image"
+                  />
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="content">
+                  <h3 class="title">{{ prototype.fields.title }}</h3>
+                  <p class="subtitle">
+                    {{ prototype.fields.shortDescription }}
+                  </p>
+                </div>
+              </div>
+            </nuxt-link>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </template>
 
 <script>

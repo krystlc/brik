@@ -95,7 +95,6 @@ import CallToAction from '@/components/CallToAction'
 
 export default {
   components: { CallToAction },
-  layout: 'landing',
   mixins: [mixin],
   async fetch({ store, params }) {
     await store.dispatch('entry/getEntryBySlug', {

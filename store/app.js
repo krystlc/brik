@@ -14,13 +14,8 @@ export const state = () => ({
     },
     {
       icon: 'bubble_chart',
-      title: 'News',
-      to: '/news'
-    },
-    {
-      icon: '',
-      title: 'Contact',
-      to: '/contact'
+      title: 'Blog',
+      to: '/blog'
     }
   ],
   socials: [

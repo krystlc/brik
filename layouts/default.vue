@@ -1,11 +1,13 @@
 <template>
-  <div>
+  <div class="hero is-fullheight">
     <layout-drawer />
-    <layout-toolbar />
-    <main class="container">
-      <nuxt />
-    </main>
-    <layout-footer />
+    <div class="hero-head">
+      <layout-toolbar />
+    </div>
+    <nuxt />
+    <div class="hero-foot">
+      <layout-footer />
+    </div>
   </div>
 </template>
 

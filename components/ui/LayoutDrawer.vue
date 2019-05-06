@@ -1,9 +1,5 @@
 <template>
-  <aside
-    v-if="drawer"
-    id="drawer"
-    class="hero is-success is-fullheight is-overlay"
-  >
+  <aside id="drawer" class="hero is-success is-fullheight is-overlay">
     <div class="hero-body">
       <div class="container">
         <div class="columns is-mobile is-centered">
@@ -28,13 +24,21 @@
 
 <script>
 export default {
+  data() {
+    return {
+      html: document.getElementsByTagName('html')[0]
+    }
+  },
   computed: {
-    drawer() {
-      return this.$store.state.app.drawer
-    },
     items() {
       return this.$store.state.app.items
     }
+  },
+  mounted() {
+    this.html.style.overflow = 'hidden'
+  },
+  beforeDestroy() {
+    this.html.style.overflow = 'auto'
   },
   methods: {
     toggle() {

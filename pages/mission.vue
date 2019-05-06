@@ -5,8 +5,10 @@
         <div class="columns">
           <div class="column has-text-centered">
             <hgroup>
-              <h1 class="title is-1">{{ entry.fields.title }}</h1>
-              <h2 class="subtitle is-3">
+              <h1 class="title is-1">
+                {{ entry.fields.title }}
+              </h1>
+              <h2 class="subtitle">
                 {{ entry.fields.shortDescription }}
               </h2>
             </hgroup>
@@ -29,7 +31,9 @@
       <div class="container">
         <div class="columns">
           <div class="column">
-            <h3 class="title is-3 has-text-centered">Timeline</h3>
+            <h3 class="title is-2 has-text-centered has-text-weight-light">
+              Timeline
+            </h3>
             <div class="timeline is-centered">
               <header class="timeline-header">
                 <span class="tag is-medium is-primary">
@@ -76,9 +80,12 @@
       <div class="container">
         <div class="columns is-vcentered">
           <div class="column">
-            <h3 class="title is-3">Prototype Zero</h3>
-            <p class="subtitle">learn more about blah blah...</p>
-            <button class="button is-secondary is-rounded">Learn more</button>
+            <h3 class="title is-3 has-text-weight-light">Prototype Zero</h3>
+            <p class="subtitle">
+              learn more about blah blah...
+              <nuxt-link to="/">read more</nuxt-link>
+            </p>
+            <hr />
           </div>
           <div class="column">
             <call-to-action />
@@ -104,6 +111,7 @@ export default {
   },
   head() {
     return {
+      title: 'Mission | Brik Labs',
       link: [
         {
           rel: 'stylesheet',

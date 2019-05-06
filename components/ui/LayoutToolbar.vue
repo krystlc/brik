@@ -3,7 +3,7 @@
     <div class="container">
       <div class="navbar-brand">
         <router-link class="navbar-item" to="/">Brik Labs</router-link>
-        <span class="navbar-burger burger" @click="toggle">
+        <span class="navbar-burger burger" @click.prevent="toggle">
           <span></span>
           <span></span>
           <span></span>

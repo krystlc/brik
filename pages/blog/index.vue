@@ -1,5 +1,5 @@
 <template>
-  <main id="prototypes">
+  <main id="blog">
     <section class="section">
       <div class="container">
         <div class="columns is-centered">
@@ -48,11 +48,6 @@
             </nuxt-link>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="section">
-      <div class="container">
-        <div class="columns"></div>
       </div>
     </section>
   </main>

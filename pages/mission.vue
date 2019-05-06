@@ -27,21 +27,23 @@
     </section>
     <section class="section">
       <div class="container">
-        <div class="columns has-text-centered">
+        <div class="columns">
           <div class="column">
-            <h3 class="title is-3">Timeline</h3>
+            <h3 class="title is-3 has-text-centered">Timeline</h3>
             <div class="timeline is-centered">
               <header class="timeline-header">
-                <span class="tag is-medium is-primary">Start</span>
+                <span class="tag is-medium is-primary">
+                  <i class="fa fa-seedling"></i
+                ></span>
               </header>
-              <div class="timeline-item is-primary">
+              <div class="timeline-item">
                 <div class="timeline-marker is-primary"></div>
                 <div class="timeline-content">
                   <p class="heading">January 2016</p>
                   <p>Timeline content - Can include any HTML element</p>
                 </div>
               </div>
-              <div class="timeline-item is-primary">
+              <div class="timeline-item">
                 <div class="timeline-marker is-primary"></div>
                 <div class="timeline-content">
                   <p class="heading">February 2016</p>
@@ -51,7 +53,7 @@
               <header class="timeline-header">
                 <span class="tag is-primary">2017</span>
               </header>
-              <div class="timeline-item is-danger">
+              <div class="timeline-item">
                 <div class="timeline-marker is-danger is-icon">
                   <i class="fa fa-flag"></i>
                 </div>
@@ -61,16 +63,27 @@
                 </div>
               </div>
               <header class="timeline-header">
-                <span class="tag is-medium is-primary">End</span>
+                <span class="tag is-medium is-secondary">
+                  <i class="fa fa-ellipsis-h"></i
+                ></span>
               </header>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="section has-background-warning">
+    <section class="section has-background-light">
       <div class="container">
-        <call-to-action />
+        <div class="columns is-vcentered">
+          <div class="column">
+            <h3 class="title is-3">Prototype Zero</h3>
+            <p class="subtitle">learn more about blah blah...</p>
+            <button class="button is-secondary is-rounded">Learn more</button>
+          </div>
+          <div class="column">
+            <call-to-action />
+          </div>
+        </div>
       </div>
     </section>
   </main>

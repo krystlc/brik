@@ -1,6 +1,6 @@
 <template>
-  <main>
-    <section id="hero" class="section">
+  <main id="mission">
+    <section class="section">
       <div class="container">
         <div class="columns">
           <div class="column has-text-centered">

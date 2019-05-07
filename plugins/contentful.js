@@ -6,6 +6,5 @@ const config = {
 }
 
 const client = contentful.createClient(config)
-console.log(client)
 
 export default client

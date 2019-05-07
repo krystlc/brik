@@ -72,11 +72,11 @@ export default {
    ** Build configuration
    */
   build: {
-    loaders: {
-      stylus: {
-        import: ['~assets/style/variables.styl']
-      }
-    },
+    // loaders: {
+    //   stylus: {
+    //     import: ['~assets/style/variables.styl']
+    //   }
+    // },
     /*
      ** You can extend webpack config here
      */

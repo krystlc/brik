@@ -16,12 +16,16 @@ export const mutations = {
 
 export const actions = {
   async getEntryBySlug({ commit }, params) {
-    commit('setLoading', true)
-    const response = await client.getEntries({
-      'fields.slug': params.slug,
-      content_type: params.type
-    })
-    commit('setCurrentEntry', response.items[0])
-    commit('setLoading', false)
+    try {
+      commit('setLoading', true)
+      const response = await client.getEntries({
+        'fields.slug': params.slug,
+        content_type: params.type
+      })
+      commit('setCurrentEntry', response.items[0])
+      commit('setLoading', false)
+    } catch (err) {
+      console.log('Something went wrong: ', err, process.env.NODE_ENV)
+    }
   }
 }

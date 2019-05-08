@@ -5,7 +5,7 @@
         <div class="column is-half">
           <hgroup>
             <h1 class="title is-size-1 has-text-weight-light">
-              {{ entry.fields.shortDescription }} REALLY?
+              {{ entry.fields.shortDescription }}
             </h1>
             <h2 class="subtitle">
               {{ entry.fields.copy.content[0].content[0].value.substr(0, 120) }}
@@ -42,12 +42,16 @@ export default {
   //     slug: 'home'
   //   })
   // },
-  async asyncData() {
-    const entry = await client.getEntries({
-      'fields.slug': 'home',
-      content_type: 'page'
-    })
-    return { entry: entry.items[0] }
+  asyncData() {
+    return client
+      .getEntries({
+        'fields.slug': 'home',
+        content_type: 'page'
+      })
+      .then(res => {
+        return { entry: res.items[0] }
+      })
+      .catch(console.error)
   },
   head() {
     return {

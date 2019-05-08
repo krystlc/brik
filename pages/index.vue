@@ -41,10 +41,13 @@ export default {
     }
   },
   async fetch({ store, params }) {
-    await store.dispatch('entry/getEntryBySlug', {
-      type: 'page',
-      slug: 'home'
-    })
+    console.log(store.state.entry)
+    if (store.state.entry.currentEntry === {}) {
+      await store.dispatch('entry/getEntryBySlug', {
+        type: 'page',
+        slug: 'home'
+      })
+    }
   },
   head() {
     return {

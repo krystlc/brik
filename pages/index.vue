@@ -47,7 +47,7 @@ export default {
       type: 'page',
       slug: 'home'
     })
-    console.log(store.state.entry)
+    console.log('after: ', store.state.entry)
   },
   head() {
     return {

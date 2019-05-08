@@ -46,10 +46,12 @@ export default {
       'this shit is empty: ',
       Object.keys(store.state.entry.currentEntry).length
     )
-    await store.dispatch('entry/getEntryBySlug', {
-      type: 'page',
-      slug: 'home'
-    })
+    if (Object.keys(store.state.entry.currentEntry).length === 0) {
+      await store.dispatch('entry/getEntryBySlug', {
+        type: 'page',
+        slug: 'home'
+      })
+    }
     console.log('after: ', Object.keys(store.state.entry.currentEntry).length)
   },
   head() {

@@ -31,20 +31,23 @@
 </template>
 
 <script>
-import mixin from '@/mixins/entryMixin'
+// import mixin from '@/mixins/entryMixin'
+import client from '@/plugins/contentful'
 
 export default {
-  mixins: [mixin],
-  computed: {
-    posts() {
-      return this.$store.state.posts.posts
-    }
-  },
-  async fetch({ store, params }) {
-    await store.dispatch('entry/getEntryBySlug', {
-      type: 'page',
-      slug: 'home'
+  // mixins: [mixin],
+  // async fetch({ store, params }) {
+  //   await store.dispatch('entry/getEntryBySlug', {
+  //     type: 'page',
+  //     slug: 'home'
+  //   })
+  // },
+  async asyncData() {
+    const entry = await client.getEntries({
+      'fields.slug': 'home',
+      content_type: 'page'
     })
+    return { entry: entry.items[0] }
   },
   head() {
     return {

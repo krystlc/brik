@@ -31,21 +31,23 @@
 </template>
 
 <script>
+import entryMixin from '@/mixins/entryMixin'
 import { createClient } from '@/plugins/contentful'
 
 const client = createClient()
 
 export default {
-  asyncData() {
-    return client
-      .getEntries({
+  mixins: [entryMixin],
+  async asyncData() {
+    try {
+      const entry = await client.getEntries({
         'fields.slug': 'home',
         content_type: 'page'
       })
-      .then(res => {
-        return { entry: res.items[0] }
-      })
-      .catch(console.error)
+      return { entry: entry.items[0] }
+    } catch (err) {
+      console.log(err)
+    }
   },
   head() {
     return {

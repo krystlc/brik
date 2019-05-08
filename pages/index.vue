@@ -5,7 +5,7 @@
         <div class="column is-half">
           <hgroup>
             <h1 class="title is-size-1 has-text-weight-light">
-              {{ entry.fields.shortDescription }}
+              {{ entry.fields.shortDescription }} REALLY?
             </h1>
             <h2 class="subtitle">
               {{ entry.fields.copy.content[0].content[0].value.substr(0, 120) }}

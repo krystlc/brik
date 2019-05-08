@@ -31,17 +31,9 @@
 </template>
 
 <script>
-// import mixin from '@/mixins/entryMixin'
 import client from '@/plugins/contentful'
 
 export default {
-  // mixins: [mixin],
-  // async fetch({ store, params }) {
-  //   await store.dispatch('entry/getEntryBySlug', {
-  //     type: 'page',
-  //     slug: 'home'
-  //   })
-  // },
   asyncData() {
     return client
       .getEntries({

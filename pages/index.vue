@@ -42,12 +42,15 @@ export default {
   },
   async fetch({ store, params }) {
     console.log(store.state.entry)
-    console.log('this shit is empty: ', store.state.entry.currentEntry === {})
+    console.log(
+      'this shit is empty: ',
+      Object.keys(store.state.entry.currentEntry).length
+    )
     await store.dispatch('entry/getEntryBySlug', {
       type: 'page',
       slug: 'home'
     })
-    console.log('after: ', store.state.entry)
+    console.log('after: ', Object.keys(store.state.entry.currentEntry).length)
   },
   head() {
     return {

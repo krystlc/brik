@@ -42,10 +42,12 @@ export default {
   },
   async fetch({ store, params }) {
     console.log(store.state.entry)
+    console.log('this shit is empty: ', store.state.entry.currentEntry === {})
     await store.dispatch('entry/getEntryBySlug', {
       type: 'page',
       slug: 'home'
     })
+    console.log(store.state.entry)
   },
   head() {
     return {

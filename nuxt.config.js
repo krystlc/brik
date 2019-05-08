@@ -8,7 +8,7 @@ export default {
   mode: 'universal',
   env: {
     CTF_SPACE_ID: config.CTF_SPACE_ID,
-    CTF_CD_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN
+    CTF_CD_ACCESS_TOKEN: config.CTF_CD_ACCESS_TOKEN
   },
 
   /*

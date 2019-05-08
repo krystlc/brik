@@ -32,22 +32,15 @@
 
 <script>
 import entryMixin from '@/mixins/entryMixin'
-import { createClient } from '@/plugins/contentful'
-
-const client = createClient()
 
 export default {
   mixins: [entryMixin],
-  async asyncData() {
-    try {
-      const entry = await client.getEntries({
-        'fields.slug': 'home',
-        content_type: 'page'
-      })
-      return { entry: entry.items[0] }
-    } catch (err) {
-      console.log(err)
-    }
+  async asyncData({ app, params, error, payload }) {
+    const entry = await app.$getContent({
+      'fields.slug': 'home',
+      content_type: 'page'
+    })
+    return { entry: entry.items[0] }
   },
   head() {
     return {

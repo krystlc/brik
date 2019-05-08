@@ -1,4 +1,4 @@
-import * as contentful from 'contentful'
+// import * as contentful from 'contentful'
 import pkg from './package'
 import config from './.contentful.json'
 

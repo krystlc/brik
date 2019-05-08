@@ -1,10 +1,15 @@
 import * as contentful from 'contentful'
 import pkg from './package'
+import config from './.contentful.json'
 
 require('dotenv').config()
 
 export default {
   mode: 'universal',
+  env: {
+    CTF_SPACE_ID: config.CTF_SPACE_ID,
+    CTF_CD_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN
+  },
 
   /*
    ** Headers of the page

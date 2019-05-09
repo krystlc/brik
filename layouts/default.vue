@@ -1,13 +1,13 @@
 <template>
   <div class="hero is-fullheight">
     <layout-drawer v-if="drawer" />
-    <div class="hero-head">
+    <header class="hero-head">
       <layout-toolbar />
-    </div>
+    </header>
     <nuxt />
-    <div class="hero-foot">
+    <footer class="hero-foot">
       <layout-footer />
-    </div>
+    </footer>
   </div>
 </template>
 

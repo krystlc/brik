@@ -97,25 +97,18 @@
 </template>
 
 <script>
-import mixin from '@/mixins/entryMixin'
+import entryMixin from '@/mixins/entryMixin'
 import CallToAction from '@/components/CallToAction'
-import { createClient } from '@/plugins/contentful'
-
-const client = createClient()
 
 export default {
   components: { CallToAction },
-  mixins: [mixin],
-  async asyncData() {
-    try {
-      const entry = await client.getEntries({
-        'fields.slug': 'mission',
-        content_type: 'page'
-      })
-      return { entry: entry.items[0] }
-    } catch (err) {
-      console.log(err)
-    }
+  mixins: [entryMixin],
+  async asyncData({ app, params, error, payload }) {
+    const entry = await app.$getContent({
+      'fields.slug': 'mission',
+      content_type: 'page'
+    })
+    return { entry: entry.items[0] }
   },
   head() {
     return {

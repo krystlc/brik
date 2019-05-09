@@ -1,16 +1,9 @@
 <template>
-  <main class="hero-body">
-    <section id="hero" class="container">
-      <div class="columns is-desktop">
-        <div class="column is-half">
-          <h1>{{ entry.fields.title }}</h1>
-          <div>
-            <pre>{{ entry.fields.copy.content }}</pre>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+  <div>
+    <div>
+      <pre>{{ entry.fields }}</pre>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -24,7 +17,7 @@ export default {
     } else {
       const entry = await app.$getContent({
         'fields.slug': params._slug,
-        content_type: 'page'
+        content_type: 'prototype'
       })
       return { entry: entry.items[0] }
     }

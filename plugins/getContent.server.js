@@ -1,4 +1,4 @@
-import { createClient } from '@/plugins/contentful'
+import { createClient } from './contentful'
 
 const client = createClient()
 

@@ -1,18 +1,7 @@
 import pkg from './package'
 
-const pages = require('./static/data/page.json')
-  .filter(e => e.fields.simple === true)
-  .map(page => `${page.fields.slug}`)
-const prototypes = require('./static/data/prototype.json').map(
-  proto => `/prototype/${proto.fields.slug}`
-)
-const posts = require('./static/data/blogPost.json').map(
-  post => `/blog/${post.fields.slug}`
-)
-
 export default {
   mode: 'universal',
-
   head: {
     title: 'Brik Labs',
     meta: [
@@ -41,10 +30,9 @@ export default {
       }
     ]
   },
-
   loading: { color: '#fff' },
-
   css: ['~/assets/style/app.scss'],
+  plugins: ['~/plugins/renderRichText'],
   modules: ['~/modules/getContent'],
   build: {
     extend(config, ctx) {
@@ -62,6 +50,17 @@ export default {
   generate: {
     subFolders: false,
     fallback: true,
-    routes: [...pages, ...prototypes, ...posts]
+    routes: () => {
+      const pages = require('./static/data/page.json')
+        .filter(e => e.fields.simple === true)
+        .map(page => `${page.fields.slug}`)
+      const prototypes = require('./static/data/prototype.json').map(
+        proto => `/prototype/${proto.fields.slug}`
+      )
+      const posts = require('./static/data/blogPost.json').map(
+        post => `/blog/${post.fields.slug}`
+      )
+      return [...pages, ...prototypes, ...posts]
+    }
   }
 }

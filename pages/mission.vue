@@ -19,11 +19,7 @@
     <section class="section">
       <div class="container">
         <div class="columns is-mobile is-centered">
-          <div class="column is-half-desktop">
-            <p>
-              {{ entry.fields.copy.content[0].content[0].value }}
-            </p>
-          </div>
+          <div class="column is-half-desktop" v-html="copy"></div>
         </div>
       </div>
     </section>

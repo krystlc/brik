@@ -1,12 +1,10 @@
 <template>
   <main class="hero-body">
-    <section id="hero" class="container">
-      <div class="columns is-desktop">
-        <div class="column is-half">
-          <h1>{{ entry.fields.title }}</h1>
-          <div>
-            <pre>{{ entry.fields.copy.content }}</pre>
-          </div>
+    <section class="container">
+      <div class="columns">
+        <div class="column">
+          <h1 class="title">{{ entry.fields.title }}</h1>
+          <div v-html="copy"></div>
         </div>
       </div>
     </section>
@@ -14,10 +12,10 @@
 </template>
 
 <script>
-import mixin from '@/mixins/entryMixin'
+import entryMixin from '@/mixins/entryMixin'
 
 export default {
-  mixins: [mixin],
+  mixins: [entryMixin],
   asyncData({ params }) {
     const entry = require('~/static/data/page.json').find(
       e => e.fields.slug === params.slug

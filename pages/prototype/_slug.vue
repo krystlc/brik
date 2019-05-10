@@ -1,8 +1,7 @@
 <template>
   <div>
-    <div>
-      <pre>{{ entry.fields }}</pre>
-    </div>
+    <h1 class="title is-1">{{ entry.fields.title }}</h1>
+    <div class="content" v-html="copy"></div>
   </div>
 </template>
 

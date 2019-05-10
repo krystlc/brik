@@ -7,19 +7,17 @@
             <h1 class="title is-size-1 has-text-weight-light">
               {{ entry.fields.shortDescription }}
             </h1>
-            <h2 class="subtitle">
-              {{ entry.fields.copy.content[0].content[0].value.substr(0, 120) }}
-            </h2>
+            <h2 class="subtitle" v-html="copy"></h2>
             <hr />
             <div class="field is-grouped">
               <p class="control">
                 <nuxt-link to="/prototype" class="button is-rounded is-primary">
-                  Our Prototypes
+                  Prototypes
                 </nuxt-link>
               </p>
               <p class="control">
                 <nuxt-link to="/mission" class="button is-rounded is-info">
-                  Our Mission
+                  Mission
                 </nuxt-link>
               </p>
             </div>

@@ -55,13 +55,9 @@
 
 <script>
 export default {
-  async asyncData({ app, params, error, payload }) {
-    if (process.server) {
-      const posts = await app.$getContent({
-        content_type: 'blogPost'
-      })
-      return { posts: posts.items }
-    }
+  asyncData() {
+    const posts = require('~/static/data/blogPost.json')
+    return { posts }
   },
   head() {
     return {

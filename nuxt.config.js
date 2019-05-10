@@ -1,18 +1,18 @@
-import * as contentful from 'contentful'
 import pkg from './package'
 
-require('dotenv').config()
+const pages = require('./static/data/page.json')
+  .filter(e => e.fields.simple === true)
+  .map(page => `${page.fields.slug}`)
+const prototypes = require('./static/data/prototype.json').map(
+  proto => `/prototype/${proto.fields.slug}`
+)
+const posts = require('./static/data/blogPost.json').map(
+  post => `/blog/${post.fields.slug}`
+)
 
 export default {
   mode: 'universal',
-  env: {
-    CTF_SPACE_ID: process.env.CTF_SPACE_ID,
-    CTF_CD_ACCESS_TOKEN: process.env.CTF_CD_ACCESS_TOKEN
-  },
 
-  /*
-   ** Headers of the page
-   */
   head: {
     title: 'Brik Labs',
     meta: [
@@ -42,48 +42,11 @@ export default {
     ]
   },
 
-  /*
-   ** Customize the progress-bar color
-   */
   loading: { color: '#fff' },
 
-  /*
-   ** Global CSS
-   */
   css: ['~/assets/style/app.scss'],
-
-  /*
-   ** Plugins to load before mounting the App
-   */
-  plugins: ['~/plugins/getContent.js'],
-
-  /*
-   ** Nuxt.js modules
-   */
-  modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    '@nuxtjs/dotenv'
-  ],
-  /*
-   ** Axios module configuration
-   */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-  },
-
-  /*
-   ** Build configuration
-   */
+  modules: ['~/modules/getContent'],
   build: {
-    // loaders: {
-    //   stylus: {
-    //     import: ['~assets/style/variables.styl']
-    //   }
-    // },
-    /*
-     ** You can extend webpack config here
-     */
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
@@ -99,55 +62,6 @@ export default {
   generate: {
     subFolders: false,
     fallback: true,
-    routes: async () => {
-      const config = {
-        space: process.env.CTF_SPACE_ID,
-        accessToken: process.env.CTF_CD_ACCESS_TOKEN
-      }
-      const client = await contentful.createClient(config)
-
-      const page = client
-        .getEntries({
-          content_type: 'page',
-          'fields.simple': true
-        })
-        .then(res =>
-          res.items.map(entry => {
-            return {
-              route: entry.fields.slug,
-              payload: entry
-            }
-          })
-        )
-      const prototype = client
-        .getEntries({
-          content_type: 'prototype'
-        })
-        .then(res =>
-          res.items.map(entry => {
-            return {
-              route: `/prototype/${entry.fields.slug}`,
-              payload: entry
-            }
-          })
-        )
-      const blog = client
-        .getEntries({
-          content_type: 'blogPost'
-        })
-        .then(res =>
-          res.items.map(entry => {
-            return {
-              route: `/blog/${entry.fields.slug}`,
-              payload: entry
-            }
-          })
-        )
-      return Promise.all([page, prototype, blog]).then(res => [
-        ...res[0],
-        ...res[1],
-        ...res[2]
-      ])
-    }
+    routes: [...pages, ...prototypes, ...posts]
   }
 }

@@ -18,18 +18,9 @@ import mixin from '@/mixins/entryMixin'
 
 export default {
   mixins: [mixin],
-  async asyncData({ app, params, error, payload }) {
-    if (process.server) {
-      if (payload) {
-        return { entry: payload }
-      } else {
-        const entry = await app.$getContent({
-          'fields.slug': params._slug,
-          content_type: 'page'
-        })
-        return { entry: entry.items[0] }
-      }
-    }
+  asyncData({ params }) {
+    const entry = require('~/static/data/page.json')
+    return { entry: entry.find(e => e.fields.slug === params.slug) }
   }
 }
 </script>

@@ -103,14 +103,9 @@ import CallToAction from '@/components/CallToAction'
 export default {
   components: { CallToAction },
   mixins: [entryMixin],
-  async asyncData({ app, params, error, payload }) {
-    if (process.server) {
-      const entry = await app.$getContent({
-        'fields.slug': 'mission',
-        content_type: 'page'
-      })
-      return { entry: entry.items[0] }
-    }
+  asyncData() {
+    const entry = require('~/static/data/page.json')
+    return { entry: entry.find(e => e.fields.slug === 'mission') }
   },
   head() {
     return {

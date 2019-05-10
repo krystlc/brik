@@ -35,15 +35,9 @@ import entryMixin from '@/mixins/entryMixin'
 
 export default {
   mixins: [entryMixin],
-  async asyncData({ app, params, error, payload }) {
-    if (process.server) {
-      console.log('getting content now...')
-      const entry = await app.$getContent({
-        'fields.slug': 'home',
-        content_type: 'page'
-      })
-      return { entry: entry.items[0] }
-    }
+  asyncData() {
+    const entry = require('~/static/data/page.json')
+    return { entry: entry.find(e => e.fields.slug === 'home') }
   },
   head() {
     return {

@@ -39,13 +39,9 @@
 
 <script>
 export default {
-  async asyncData({ app, params, error, payload }) {
-    if (process.server) {
-      const prototypes = await app.$getContent({
-        content_type: 'prototype'
-      })
-      return { prototypes: prototypes.items }
-    }
+  asyncData() {
+    const prototypes = require('~/static/data/prototype.json')
+    return { prototypes }
   },
   head() {
     return {

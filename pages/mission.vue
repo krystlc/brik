@@ -104,8 +104,10 @@ export default {
   components: { CallToAction },
   mixins: [entryMixin],
   asyncData() {
-    const entry = require('~/static/data/page.json')
-    return { entry: entry.find(e => e.fields.slug === 'mission') }
+    const entry = require('~/static/data/page.json').find(
+      e => e.fields.slug === 'mission'
+    )
+    return { entry }
   },
   head() {
     return {

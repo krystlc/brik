@@ -36,8 +36,10 @@ import entryMixin from '@/mixins/entryMixin'
 export default {
   mixins: [entryMixin],
   asyncData() {
-    const entry = require('~/static/data/page.json')
-    return { entry: entry.find(e => e.fields.slug === 'home') }
+    const entry = require('~/static/data/page.json').find(
+      e => e.fields.slug === 'home'
+    )
+    return { entry }
   },
   head() {
     return {

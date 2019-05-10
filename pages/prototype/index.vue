@@ -40,10 +40,12 @@
 <script>
 export default {
   async asyncData({ app, params, error, payload }) {
-    const prototypes = await app.$getContent({
-      content_type: 'prototype'
-    })
-    return { prototypes: prototypes.items }
+    if (process.server) {
+      const prototypes = await app.$getContent({
+        content_type: 'prototype'
+      })
+      return { prototypes: prototypes.items }
+    }
   },
   head() {
     return {

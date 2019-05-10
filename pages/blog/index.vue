@@ -56,10 +56,12 @@
 <script>
 export default {
   async asyncData({ app, params, error, payload }) {
-    const posts = await app.$getContent({
-      content_type: 'blogPost'
-    })
-    return { posts: posts.items }
+    if (process.server) {
+      const posts = await app.$getContent({
+        content_type: 'blogPost'
+      })
+      return { posts: posts.items }
+    }
   },
   head() {
     return {

@@ -104,11 +104,13 @@ export default {
   components: { CallToAction },
   mixins: [entryMixin],
   async asyncData({ app, params, error, payload }) {
-    const entry = await app.$getContent({
-      'fields.slug': 'mission',
-      content_type: 'page'
-    })
-    return { entry: entry.items[0] }
+    if (process.server) {
+      const entry = await app.$getContent({
+        'fields.slug': 'mission',
+        content_type: 'page'
+      })
+      return { entry: entry.items[0] }
+    }
   },
   head() {
     return {

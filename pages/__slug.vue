@@ -19,14 +19,16 @@ import mixin from '@/mixins/entryMixin'
 export default {
   mixins: [mixin],
   async asyncData({ app, params, error, payload }) {
-    if (payload) {
-      return { entry: payload }
-    } else {
-      const entry = await app.$getContent({
-        'fields.slug': params._slug,
-        content_type: 'page'
-      })
-      return { entry: entry.items[0] }
+    if (process.server) {
+      if (payload) {
+        return { entry: payload }
+      } else {
+        const entry = await app.$getContent({
+          'fields.slug': params._slug,
+          content_type: 'page'
+        })
+        return { entry: entry.items[0] }
+      }
     }
   }
 }

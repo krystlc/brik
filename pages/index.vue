@@ -36,11 +36,17 @@ import entryMixin from '@/mixins/entryMixin'
 export default {
   mixins: [entryMixin],
   async asyncData({ app, params, error, payload }) {
-    const entry = await app.$getContent({
-      'fields.slug': 'home',
-      content_type: 'page'
-    })
-    return { entry: entry.items[0] }
+    console.log('ok, i will load only if i am in the server...')
+    if (process.server) {
+      console.log('getting content now...')
+      const entry = await app.$getContent({
+        'fields.slug': 'home',
+        content_type: 'page'
+      })
+      return { entry: entry.items[0] }
+    } else {
+      console.log('ok, did not get content because it already exists?')
+    }
   },
   head() {
     return {

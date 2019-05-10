@@ -1,12 +1,13 @@
 <template>
   <main>
     <section
-      class="hero is-primary"
+      class="hero is-dark"
       :style="cover ? `background-image: url('${cover}')` : ''"
     >
       <div class="hero-body">
         <div class="container">
           <hgroup>
+            <h5 class="has-text-weight-bold">{{ date }}</h5>
             <h1 class="title is-1">{{ title }}</h1>
             <h2 class="subtitle">{{ description }}</h2>
           </hgroup>

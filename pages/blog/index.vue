@@ -1,7 +1,14 @@
 <template>
   <main id="blog">
-    <section class="section">
-      <div class="container">
+    <section
+      class="hero is-light has-cover"
+      :style="
+        posts[0].fields.cover.fields
+          ? `background-image: url('${posts[0].fields.cover.fields.file.url}')`
+          : ''
+      "
+    >
+      <div class="hero-body">
         <div class="columns is-centered">
           <div class="column is-two-thirds-desktop">
             <div class="card">
@@ -17,14 +24,19 @@
                     {{ posts[0].fields.shortDescription }}
                   </p>
                 </div>
-                <button class="button is-rounded is-pulled-right is-icon">
-                  <i class="fa fa-plus"></i>
-                </button>
+                <nuxt-link
+                  class="button is-rounded is-pulled-right is-icon"
+                  :to="`/blog/${posts[0].fields.slug}`"
+                  ><i class="fa fa-plus"></i
+                ></nuxt-link>
               </div>
             </div>
-            <hr />
           </div>
         </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
         <div class="columns is-multiline is-centered">
           <div
             v-for="(post, i) in posts"
@@ -74,3 +86,12 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.hero-body {
+  padding-bottom: 0;
+  .card {
+    bottom: -1em;
+  }
+}
+</style>

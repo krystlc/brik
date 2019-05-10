@@ -1,12 +1,13 @@
 <template>
-  <div class="container has-text-right">
+  <div class="container">
     <div class="level">
       <div class="level-left">
         <div class="level-item">
           <p class="control">
-            Brik Labs LLC &copy; 2019, Made in Florida, USA.
+            Brik Labs LLC &copy; 2019.
           </p>
         </div>
+        <div class="level-item">Made in Florida, USA.</div>
       </div>
       <div class="level-right">
         <div class="level-item">
@@ -35,9 +36,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.container {
-  padding: 1.5em 0;
-}
-</style>

@@ -5,7 +5,7 @@
       <layout-toolbar />
     </header>
     <nuxt />
-    <footer>
+    <footer class="footer">
       <layout-footer />
     </footer>
   </div>

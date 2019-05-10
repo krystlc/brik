@@ -25,3 +25,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.hero-foot {
+  padding: 0 0 1em;
+}
+</style>

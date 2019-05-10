@@ -3,17 +3,14 @@ export const state = () => ({
   drawer: false,
   items: [
     {
-      icon: 'bubble_chart',
       title: 'Mission',
       to: '/mission'
     },
     {
-      icon: 'bubble_chart',
       title: 'Prototypes',
       to: '/prototype'
     },
     {
-      icon: 'bubble_chart',
       title: 'Blog',
       to: '/blog'
     }

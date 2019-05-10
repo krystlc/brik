@@ -15,6 +15,11 @@ export default {
       } else {
         return false
       }
+    },
+    date() {
+      const date = new Date(this.entry.sys.updatedAt)
+      console.log(date)
+      return date.toDateString()
     }
   },
   head() {

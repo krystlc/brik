@@ -4,7 +4,7 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 const options = {
   renderNode: {
     'embedded-asset-block': node =>
-      `<figure class="is-image"><img src="${
+      `<figure class="image"><img src="${
         node.data.target.fields.file.url
       }" /></figure>`
   }

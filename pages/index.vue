@@ -32,6 +32,7 @@
 import entryMixin from '@/mixins/entryMixin'
 
 export default {
+  layout: 'dark',
   mixins: [entryMixin],
   asyncData() {
     const entry = require('~/static/data/page.json').find(

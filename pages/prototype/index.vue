@@ -14,9 +14,9 @@
               class="card is-block"
             >
               <div class="card-image">
-                <figure class="image is-4by3">
+                <figure class="image">
                   <img
-                    src="https://bulma.io/images/placeholders/1280x960.png"
+                    :src="prototype.fields.cover.fields.file.url"
                     alt="Placeholder image"
                   />
                 </figure>

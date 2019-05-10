@@ -9,8 +9,15 @@
         </div>
       </div>
       <div class="level-right">
-        <div v-for="(social, i) in socials" :key="i" class="level-item">
-          <a href="#" target="_blank" rel="noopener noreferrer">
+        <div class="level-item">
+          <a
+            v-for="(social, i) in socials"
+            :key="i"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="icon is-medium"
+          >
             <i :class="`fab fa-${social.icon}`" />
           </a>
         </div>

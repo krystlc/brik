@@ -1,13 +1,18 @@
 <template>
   <div class="container">
+    <div v-if="!mini" class="columns">
+      <div class="column">
+        <sitemap />
+      </div>
+      <div class="column">
+        <call-to-action />
+      </div>
+    </div>
     <div class="level">
       <div class="level-left">
         <div class="level-item">
-          <p class="control">
-            Brik Labs LLC &copy; 2019.
-          </p>
+          <p class="control" v-html="legal"></p>
         </div>
-        <div class="level-item">Made in Florida, USA.</div>
       </div>
       <div class="level-right">
         <div class="level-item">
@@ -28,8 +33,18 @@
 </template>
 
 <script>
+import Sitemap from '@/components/Sitemap'
+import CallToAction from '@/components/CallToAction'
+
 export default {
+  components: { Sitemap, CallToAction },
+  props: {
+    mini: Boolean
+  },
   computed: {
+    legal() {
+      return this.$store.state.app.legal
+    },
     socials() {
       return this.$store.state.app.socials
     }

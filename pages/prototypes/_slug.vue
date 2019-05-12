@@ -16,8 +16,8 @@
     </section>
     <section class="section">
       <div class="container">
-        <div class="columns">
-          <div class="column">
+        <div class="columns is-centered">
+          <div class="column is-two-thirds">
             <div class="content" v-html="copy"></div>
           </div>
         </div>

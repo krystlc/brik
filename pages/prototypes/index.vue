@@ -10,7 +10,7 @@
             class="column is-one-third"
           >
             <nuxt-link
-              :to="`/prototype/${prototype.fields.slug}`"
+              :to="`/prototypes/${prototype.fields.slug}`"
               class="card is-block"
             >
               <div class="card-image">
@@ -45,7 +45,7 @@ export default {
   },
   head() {
     return {
-      title: 'Prototypes - Brik Labs',
+      title: 'Prototypes | Brik Labs',
       meta: [
         {
           hid: 'description',

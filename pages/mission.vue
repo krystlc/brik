@@ -6,10 +6,10 @@
           <div class="column has-text-centered">
             <hgroup>
               <h1 class="title is-1">
-                {{ entry.fields.title }}
+                {{ title }}
               </h1>
               <h2 class="subtitle">
-                {{ entry.fields.shortDescription }}
+                {{ description }}
               </h2>
             </hgroup>
           </div>
@@ -72,32 +72,13 @@
         </div>
       </div>
     </section>
-    <section class="section has-background-light">
-      <div class="container">
-        <div class="columns is-vcentered">
-          <div class="column">
-            <h3 class="title is-3 has-text-weight-light">Prototype Zero</h3>
-            <p class="subtitle">
-              learn more about blah blah...
-              <nuxt-link to="/">read more</nuxt-link>
-            </p>
-            <hr />
-          </div>
-          <div class="column">
-            <call-to-action />
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 </template>
 
 <script>
 import entryMixin from '@/mixins/entryMixin'
-import CallToAction from '@/components/CallToAction'
 
 export default {
-  components: { CallToAction },
   mixins: [entryMixin],
   asyncData() {
     const entry = require('~/static/data/page.json').find(

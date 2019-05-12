@@ -5,13 +5,16 @@
         <div class="column is-half">
           <hgroup>
             <h1 class="title is-size-1 has-text-weight-light">
-              {{ entry.fields.shortDescription }}
+              {{ description }}
             </h1>
             <h2 class="subtitle" v-html="copy"></h2>
             <hr />
             <div class="field is-grouped">
               <p class="control">
-                <nuxt-link to="/prototype" class="button is-rounded is-primary">
+                <nuxt-link
+                  to="/prototypes"
+                  class="button is-rounded is-primary"
+                >
                   Prototypes
                 </nuxt-link>
               </p>

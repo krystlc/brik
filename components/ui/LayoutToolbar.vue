@@ -2,7 +2,7 @@
   <nav class="navbar">
     <div class="container">
       <div class="navbar-brand">
-        <router-link class="navbar-item" to="/">Brik Labs</router-link>
+        <router-link class="navbar-item" to="/">{{ title }}</router-link>
         <span class="navbar-burger burger" @click.prevent="toggle">
           <span></span>
           <span></span>
@@ -27,6 +27,9 @@ export default {
   computed: {
     items() {
       return this.$store.state.app.items
+    },
+    title() {
+      return this.$store.state.app.title
     }
   },
   methods: {

@@ -6,7 +6,7 @@
     </header>
     <nuxt />
     <footer class="hero-foot">
-      <layout-footer />
+      <layout-footer mini />
     </footer>
   </div>
 </template>

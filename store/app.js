@@ -1,5 +1,7 @@
 export const state = () => ({
-  title: 'Brik Labs',
+  title: 'BRIK LABS',
+  legal: 'Brik Labs LLC &copy; 2019.',
+  email: 'hello@briklabs.com',
   drawer: false,
   items: [
     {
@@ -8,7 +10,7 @@ export const state = () => ({
     },
     {
       title: 'Prototypes',
-      to: '/prototype'
+      to: '/prototypes'
     },
     {
       title: 'Blog',

@@ -14,12 +14,9 @@
             <div class="card">
               <div class="card-content">
                 <div class="content">
-                  <hgroup>
-                    <h4 class="subtitle is-7">{{ posts[0].fields.date }}</h4>
-                    <h2 class="title is-2 has-text-weight-light">
-                      {{ posts[0].fields.title }}
-                    </h2>
-                  </hgroup>
+                  <h2 class="title is-2 has-text-weight-light">
+                    {{ posts[0].fields.title }}
+                  </h2>
                   <p>
                     {{ posts[0].fields.shortDescription }}
                   </p>
@@ -46,12 +43,9 @@
             <nuxt-link :to="`/blog/${post.fields.slug}`" class="card is-block">
               <article class="card-content">
                 <div class="content">
-                  <hgroup>
-                    <h4 class="subtitle is-7">{{ post.fields.date }}</h4>
-                    <h3 class="title is-4 has-text-weight-normal">
-                      {{ post.fields.title }}
-                    </h3>
-                  </hgroup>
+                  <h3 class="title is-4 has-text-weight-normal">
+                    {{ post.fields.title }}
+                  </h3>
                   <p class="subtitle is-6">
                     {{ post.fields.shortDescription }}
                   </p>
@@ -78,6 +72,15 @@ export default {
         {
           hid: 'description',
           name: 'description',
+          content:
+            'Read the latest Brik Labs news, prototype milestones, helpful agriculture technology articles and more.'
+        },
+        {
+          property: `og:title`,
+          content: `Prototypes | Brik Labs`
+        },
+        {
+          property: 'og:description ',
           content:
             'Read the latest Brik Labs news, prototype milestones, helpful agriculture technology articles and more.'
         }

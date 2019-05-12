@@ -1,5 +1,5 @@
 <template>
-  <div class="hero is-fullheight is-dark">
+  <div class="hero is-fullheight-with-navbar is-dark">
     <layout-drawer v-if="drawer" />
     <header class="hero-head">
       <layout-toolbar />

@@ -2,6 +2,7 @@
   <main>
     <section
       class="hero is-dark"
+      :class="cover ? 'has-cover' : null"
       :style="cover ? `background-image: url('${cover}')` : ''"
     >
       <div class="hero-body">

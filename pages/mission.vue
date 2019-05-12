@@ -85,18 +85,10 @@ export default {
       e => e.fields.slug === 'mission'
     )
     return { entry }
-  },
-  head() {
-    return {
-      title: 'Mission | Brik Labs',
-      link: [
-        {
-          rel: 'stylesheet',
-          href:
-            'https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.5/bulma-timeline/dist/css/bulma-timeline.min.css'
-        }
-      ]
-    }
   }
 }
 </script>
+
+<style scoped>
+@import 'https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.5/bulma-timeline/dist/css/bulma-timeline.min.css';
+</style>

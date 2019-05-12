@@ -11,7 +11,7 @@
     <div class="level">
       <div class="level-left">
         <div class="level-item">
-          <p class="control" v-html="legal"></p>
+          <p class="control has-text-grey-light" v-html="legal"></p>
         </div>
       </div>
       <div class="level-right">

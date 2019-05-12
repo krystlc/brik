@@ -7,7 +7,8 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: pkg.description },
+      { property: 'og:site_name', content: 'Brik Labs' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -51,11 +52,11 @@ export default {
     subFolders: false,
     fallback: true,
     routes: () => {
-      const pages = require('./static/data/page.json')
-        .filter(e => e.fields.simple === true)
-        .map(page => `${page.fields.slug}`)
+      const pages = require('./static/data/page.json').map(
+        page => `${page.fields.slug}`
+      )
       const prototypes = require('./static/data/prototype.json').map(
-        proto => `/prototype/${proto.fields.slug}`
+        proto => `/prototypes/${proto.fields.slug}`
       )
       const posts = require('./static/data/blogPost.json').map(
         post => `/blog/${post.fields.slug}`

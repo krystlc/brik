@@ -51,6 +51,14 @@ export default {
           hid: 'description',
           name: 'description',
           content: 'Brik Labs prototype designs and specifications.'
+        },
+        {
+          property: `og:title`,
+          content: `Prototypes | Brik Labs`
+        },
+        {
+          property: 'og:description ',
+          content: 'Brik Labs prototype designs and specifications.'
         }
       ]
     }

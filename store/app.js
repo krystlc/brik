@@ -1,6 +1,6 @@
 export const state = () => ({
   title: 'BRIK LABS',
-  legal: 'Brik Labs LLC &copy; 2019.',
+  legal: 'Brik Labs LLC &copy; 2019',
   email: 'hello@briklabs.com',
   drawer: false,
   items: [

@@ -23,13 +23,27 @@ export default {
     }
   },
   head() {
+    const title =
+      this.title !== 'Home' ? `${this.title} | Brik Labs` : 'Brik Labs'
     return {
-      title: `${this.entry.fields.title} | Brik Labs`,
+      title,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.entry.fields.shortDescription
+          content: this.description
+        },
+        {
+          property: 'og:description',
+          content: this.description
+        },
+        {
+          property: 'og:title',
+          content: title
+        },
+        {
+          property: 'og:image',
+          content: `https:${this.cover}`
         }
       ]
     }

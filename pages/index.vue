@@ -1,6 +1,10 @@
 <template>
-  <main class="hero-body">
-    <section id="hero" class="container">
+  <main id="hero" class="hero-body">
+    <div
+      class="hero-background is-overlay"
+      :style="`background-image: url('${cover}')`"
+    ></div>
+    <section class="container">
       <div class="columns is-desktop">
         <div class="column is-half">
           <hgroup>
@@ -42,11 +46,6 @@ export default {
       e => e.fields.slug === 'home'
     )
     return { entry }
-  },
-  head() {
-    return {
-      title: 'Brik Labs'
-    }
   }
 }
 </script>

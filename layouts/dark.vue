@@ -1,6 +1,8 @@
 <template>
   <div class="hero is-fullheight is-dark">
-    <layout-drawer v-if="drawer" />
+    <transition name="slide-fade">
+      <layout-drawer v-if="drawer" />
+    </transition>
     <header class="hero-head">
       <layout-toolbar />
     </header>

@@ -4,15 +4,22 @@
     <p class="subtitle is-6">
       Sign up to our newsletter and stay up to date.
     </p>
-    <div class="field is-grouped">
-      <div class="control">
-        <input class="input" type="text" placeholder="Enter your e-mail" />
+    <form name="contact" method="POST" data-netlify="true">
+      <div class="field is-grouped">
+        <div class="control">
+          <input
+            class="input"
+            type="email"
+            name="email"
+            placeholder="Enter your e-mail"
+          />
+        </div>
+        <div class="control">
+          <button type="submit" class="button is-rounded is-info">
+            Subscribe
+          </button>
+        </div>
       </div>
-      <div class="control">
-        <a class="button is-rounded is-info">
-          Subscribe
-        </a>
-      </div>
-    </div>
+    </form>
   </div>
 </template>

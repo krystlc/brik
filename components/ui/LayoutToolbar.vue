@@ -2,7 +2,9 @@
   <nav class="navbar">
     <div class="container">
       <div class="navbar-brand">
-        <router-link class="navbar-item" to="/">{{ title }}</router-link>
+        <router-link class="navbar-item" to="/">
+          <img src="~/static/logo.svg" class="logo" :alt="title" />
+        </router-link>
         <span class="navbar-burger burger" @click.prevent="toggle">
           <span></span>
           <span></span>

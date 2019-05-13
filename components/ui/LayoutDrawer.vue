@@ -50,6 +50,6 @@ export default {
 
 <style lang="scss" scoped>
 #drawer {
-  z-index: 10;
+  z-index: 30;
 }
 </style>

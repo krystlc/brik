@@ -1,6 +1,8 @@
 <template>
   <div>
-    <layout-drawer v-if="drawer" />
+    <transition name="slide-fade">
+      <layout-drawer v-if="drawer" />
+    </transition>
     <header>
       <layout-toolbar />
     </header>

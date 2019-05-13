@@ -1,5 +1,5 @@
 export const state = () => ({
-  title: 'BRIK LABS',
+  title: 'Brik Labs',
   legal: 'Brik Labs LLC &copy; 2019',
   email: 'hello@briklabs.com',
   drawer: false,

@@ -16,7 +16,11 @@
               <div class="card-image">
                 <figure class="image">
                   <img
-                    :src="prototype.fields.cover.fields.file.url"
+                    :src="
+                      `${
+                        prototype.fields.cover.fields.file.url
+                      }?fit=fill&w=640&h=320`
+                    "
                     alt="Placeholder image"
                   />
                 </figure>

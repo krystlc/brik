@@ -1,13 +1,14 @@
 <template>
   <main id="blog">
-    <section
-      class="hero is-light has-cover"
-      :style="
-        posts[0].fields.cover.fields
-          ? `background-image: url('${posts[0].fields.cover.fields.file.url}')`
-          : ''
-      "
-    >
+    <section class="hero is-small has-hero-background has-background-grey-dark">
+      <div
+        class="hero-background is-overlay"
+        :style="
+          `background-image: url('${
+            posts[0].fields.cover.fields.file.url
+          }?w=1280')`
+        "
+      ></div>
       <div class="hero-body">
         <div class="columns is-centered">
           <div class="column is-two-thirds-desktop">
@@ -94,7 +95,7 @@ export default {
 .hero-body {
   padding-bottom: 0;
   .card {
-    bottom: -1em;
+    bottom: -3em;
   }
 }
 </style>

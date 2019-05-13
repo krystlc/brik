@@ -1,10 +1,10 @@
 <template>
   <main>
-    <section
-      class="hero is-dark is-medium"
-      :class="cover ? 'has-cover' : null"
-      :style="cover ? `background-image: url('${cover}')` : ''"
-    >
+    <section class="hero is-dark is-medium has-hero-background">
+      <div
+        class="hero-background is-overlay"
+        :style="`background-image: url('${cover}?w=1280')`"
+      ></div>
       <div class="hero-body">
         <div class="container">
           <hgroup>

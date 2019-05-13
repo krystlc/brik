@@ -1,8 +1,8 @@
 <template>
-  <main id="hero" class="hero-body">
+  <main id="hero" class="hero-body is-overlay">
     <div
       class="hero-background is-overlay"
-      :style="`background-image: url('${cover}')`"
+      :style="`background-image: url('${this.cover}?w=1280')`"
     ></div>
     <section class="container">
       <div class="columns is-desktop">

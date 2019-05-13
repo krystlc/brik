@@ -3,18 +3,26 @@ body {
 }
 
 .hero {
-  &.has-cover {
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    // .hero-body {
-    //   background-image: linear-gradient(135deg, rgba(0, 209, 178, 0.85), rgba(0, 209, 178, 0.5));
-    // }
+  &.has-hero-background {
+    position: relative;
   }
   .hero-background {
-    position: fixed;
+    opacity: 0.5;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
   }
+}
+
+.layout-enter-active, .layout-leave-active {
+  transition: opacity .5s
+}
+.layout-enter, .layout-leave-active {
+  opacity: 0
+}
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s
+}
+.page-enter, .page-leave-active {
+  opacity: 0
 }

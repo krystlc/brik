@@ -1,79 +1,63 @@
 <template>
-  <div class="VueToNuxtLogo">
-    <div class="Triangle Triangle--two" />
-    <div class="Triangle Triangle--one" />
-    <div class="Triangle Triangle--three" />
-    <div class="Triangle Triangle--four" />
-  </div>
+  <svg
+    id="logo"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="120px"
+    x="0px"
+    y="0px"
+    viewBox="0 0 1254.7 317.1"
+    style="enable-background:new 0 0 1254.7 317.1;"
+    xml:space="preserve"
+  >
+    <g>
+      <path
+        :fill="leaf"
+        d="M1222.7,20.1c-2.8,1.3-5.6,2.5-8.3,3.8c-11.7,5-25.3,9.5-39,18c-10.3,6.4-26.4,17.3-31.9,23.3
+		c-1.6,2-2.5,6.4-1.5,7.5c6.4,6.5,13.6,9.3,22.6,11.7c9.5,2.5,18.5,1,27.2-3c11.6-5.3,21-13.5,29.6-22.7
+		c12.7-13.7,23.2-29,32.2-45.3c1.1-2,0.2-4.3-2-4.9c-15.3-4.4-30.8-7.7-46.8-8.2c-14.9-0.5-29.4,1.3-43,7.8
+		c-16.2,7.8-24.5,16.8-28.5,24.5c-1.9,3.7-3.9,10.1-3.2,19.8c0.7,9.2,5,7.8,7,6C1162,36.4,1192.2,21.6,1222.7,20.1z"
+      />
+      <g>
+        <path
+          :fill="letter"
+          d="M232.2,82.2c12.2,5.1,21.8,12.1,28.9,21.3c7.1,9.2,10.7,19.4,10.7,30.6c0,29.8-16.1,48.6-48.2,56.3v1.4
+			c36.6,7,55,27.2,55,60.6c0,12.7-3.7,23.9-11.1,33.6c-7.4,9.7-17.6,17.3-30.4,22.7c-12.9,5.4-27,8.1-42.4,8.1H0V74.7h192.1
+			C206.7,74.7,220,77.2,232.2,82.2z M104,169h52.4c6.1,0,11.3-1.8,15.3-5.5c4.1-3.6,6.1-8.2,6.1-13.6v-3.5c0-5.2-2.1-9.6-6.3-13.2
+			c-4.2-3.6-9.2-5.5-15.1-5.5H104V169z M104,260.6h59.1c6.1,0,11.3-1.8,15.3-5.5c4.1-3.6,6.1-8.2,6.1-13.6v-3.5
+			c0-5.4-2-9.9-6.1-13.6c-4.1-3.6-9.2-5.5-15.3-5.5H104V260.6z"
+        />
+        <path
+          :fill="letter"
+          d="M586.1,189.1c-9.5,12-23.4,20.8-41.5,26.4l64.2,101.4H494.9l-35.7-56.4h-28.8v56.4h-104V74.7H503
+			c20.7,0,38.4,3.3,53.1,10c14.7,6.7,25.7,15.7,33.1,27.1c7.4,11.4,11.1,23.8,11.1,37.1C600.3,163.8,595.6,177.1,586.1,189.1z
+			 M498.4,136.3c-5-4.2-11.2-6.3-18.5-6.3h-49.5v44.7h49.5c7.3,0,13.4-2.2,18.5-6.5c5-4.3,7.6-9.7,7.6-16
+			C505.9,145.8,503.4,140.5,498.4,136.3z"
+        />
+        <path :fill="letter" d="M657,316.9V74.7h104v242.3H657z" />
+        <path
+          :fill="letter"
+          d="M1011.5,74.7h114.9L1030,181.5l98.5,135.4h-114.3l-47.6-74.6l-35.4,36.2v38.4H816V74.7h115.3v85.6
+			L1011.5,74.7z"
+        />
+      </g>
+    </g>
+  </svg>
 </template>
 
-<style>
-.VueToNuxtLogo {
-  display: inline-block;
-  animation: turn 2s linear forwards 1s;
-  transform: rotateX(180deg);
-  position: relative;
-  overflow: hidden;
-  height: 180px;
-  width: 245px;
-}
-
-.Triangle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-}
-
-.Triangle--one {
-  border-left: 105px solid transparent;
-  border-right: 105px solid transparent;
-  border-bottom: 180px solid #41b883;
-}
-
-.Triangle--two {
-  top: 30px;
-  left: 35px;
-  animation: goright 0.5s linear forwards 3.5s;
-  border-left: 87.5px solid transparent;
-  border-right: 87.5px solid transparent;
-  border-bottom: 150px solid #3b8070;
-}
-
-.Triangle--three {
-  top: 60px;
-  left: 35px;
-  animation: goright 0.5s linear forwards 3.5s;
-  border-left: 70px solid transparent;
-  border-right: 70px solid transparent;
-  border-bottom: 120px solid #35495e;
-}
-
-.Triangle--four {
-  top: 120px;
-  left: 70px;
-  animation: godown 0.5s linear forwards 3s;
-  border-left: 35px solid transparent;
-  border-right: 35px solid transparent;
-  border-bottom: 60px solid #fff;
-}
-
-@keyframes turn {
-  100% {
-    transform: rotateX(0deg);
+<script>
+export default {
+  data() {
+    return {
+      leaf: '#22b573',
+      black: '#333333'
+    }
+  },
+  computed: {
+    letter() {
+      return this.$root.layoutName === 'dark' ? '#fff' : this.black
+    }
   }
 }
-
-@keyframes godown {
-  100% {
-    top: 180px;
-  }
-}
-
-@keyframes goright {
-  100% {
-    left: 70px;
-  }
-}
-</style>
+</script>

@@ -3,7 +3,7 @@
     <div class="container">
       <div class="navbar-brand">
         <router-link class="navbar-item" to="/">
-          <img src="~/static/logo.svg" class="logo" :alt="title" />
+          <logo />
         </router-link>
         <span class="navbar-burger burger" @click.prevent="toggle">
           <span></span>
@@ -25,7 +25,10 @@
 </template>
 
 <script>
+import Logo from '@/components/Logo'
+
 export default {
+  components: { Logo },
   computed: {
     items() {
       return this.$store.state.app.items

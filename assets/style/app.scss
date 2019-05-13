@@ -4,8 +4,8 @@ body {
 .navbar-brand {
   align-items: start;
 }
-.logo {
-  height: 32px;
+.hero.is-dark a.navbar-item:hover {
+  background-color: transparent;
 }
 
 .hero {

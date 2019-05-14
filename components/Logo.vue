@@ -48,6 +48,9 @@
 
 <script>
 export default {
+  props: {
+    dark: Boolean
+  },
   data() {
     return {
       leaf: '#22b573',
@@ -56,7 +59,7 @@ export default {
   },
   computed: {
     letter() {
-      return this.$root.layoutName === 'dark' ? '#fff' : this.black
+      return this.dark ? '#fff' : this.black
     }
   }
 }

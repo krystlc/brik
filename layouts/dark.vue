@@ -1,10 +1,10 @@
 <template>
   <div class="hero is-fullheight is-dark">
-    <transition name="slide-fade">
+    <transition name="nav">
       <layout-drawer v-if="drawer" />
     </transition>
     <header class="hero-head">
-      <layout-toolbar />
+      <layout-toolbar is-dark />
     </header>
     <nuxt />
     <footer class="hero-foot">

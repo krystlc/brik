@@ -3,9 +3,13 @@
     <div class="container">
       <div class="navbar-brand">
         <router-link class="navbar-item" to="/">
-          <logo />
+          <logo :dark="isDark" />
         </router-link>
-        <span class="navbar-burger burger" @click.prevent="toggle">
+        <span
+          class="navbar-burger burger"
+          :class="isDark ? 'has-text-white' : null"
+          @click.prevent="toggle"
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -29,6 +33,9 @@ import Logo from '@/components/Logo'
 
 export default {
   components: { Logo },
+  props: {
+    isDark: Boolean
+  },
   computed: {
     items() {
       return this.$store.state.app.items

@@ -20,25 +20,25 @@ body {
   }
 }
 
-.layout-enter-active, .layout-leave-active, 
-.page-enter-active, .page-leave-active {
-  transition: opacity .25s ease-in;
-}
-.layout-enter, .layout-leave-active, 
-.page-enter, .page-leave-active {
+.page-enter,
+.page-leave-to,
+.layout-enter,
+.layout-leave-to {
   opacity: 0;
+}
+.page-enter-to,
+.page-leave-active,
+.layout-enter-active,
+.layout-leave-active {
+  transition: all 100ms ease;
 }
 
-/* Enter and leave animations can use different */
-/* durations and timing functions.              */
-.slide-fade-enter-active {
-  transition: all .5s ease;
-}
-.slide-fade-leave-active {
-  transition: all .25s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
+.nav-enter,
+.nav-leave-to {
   opacity: 0;
+  transform: scale(1.05);
+}
+.nav-enter-to,
+.nav-leave-active {
+  transition: transform 200ms ease, opacity 400ms ease;
 }

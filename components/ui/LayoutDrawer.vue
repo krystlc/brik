@@ -24,21 +24,16 @@
 
 <script>
 export default {
-  data() {
-    return {
-      html: document.getElementsByTagName('html')[0]
-    }
-  },
   computed: {
     items() {
       return this.$store.state.app.items
     }
   },
   mounted() {
-    this.html.style.overflow = 'hidden'
+    document.getElementsByTagName('body')[0].className = 'has-drawer'
   },
   beforeDestroy() {
-    this.html.style.overflow = 'auto'
+    document.getElementsByTagName('body')[0].classList.remove('has-drawer')
   },
   methods: {
     toggle() {

@@ -1,5 +1,9 @@
 body {
   font-family: Roboto;
+  &.has-drawer {
+    overflow: hidden;
+    height: 100vh;
+  }
 }
 .navbar-brand {
   align-items: start;

@@ -2,7 +2,9 @@
   <main id="prototypes">
     <section class="section">
       <div class="container">
-        <h1 class="title is-1 has-text-centered">Prototypes</h1>
+        <h1 class="title is-1 has-text-centered">
+          Prototypes
+        </h1>
         <div class="columns is-centered">
           <div
             v-for="(prototype, i) in prototypes"
@@ -19,7 +21,7 @@
                     :src="
                       `${
                         prototype.fields.cover.fields.file.url
-                      }?fit=fill&w=640&h=320`
+                      }?fit=fill&w=640&h=320&&fl=progressive`
                     "
                     alt="Placeholder image"
                   />

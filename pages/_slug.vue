@@ -3,7 +3,7 @@
     <section class="container">
       <div class="columns">
         <div class="column">
-          <h1 class="title">{{ entry.fields.title }}</h1>
+          <h1 class="title">{{ title }}</h1>
           <div v-html="copy"></div>
         </div>
       </div>

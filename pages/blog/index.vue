@@ -6,7 +6,7 @@
         :style="
           `background-image: url('${
             posts[0].fields.cover.fields.file.url
-          }?w=1280')`
+          }?w=1280&fl=progressive')`
         "
       ></div>
       <div class="hero-body">

@@ -3,7 +3,7 @@
     <section class="hero is-dark is-medium has-hero-background">
       <div
         class="hero-background is-overlay"
-        :style="`background-image: url('${cover}?w=1280')`"
+        :style="`background-image: url('${cover}?w=1280&fl=progressive')`"
       ></div>
       <div class="hero-body">
         <div class="container">

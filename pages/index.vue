@@ -2,13 +2,13 @@
   <main id="hero" class="hero-body is-overlay">
     <div
       class="hero-background is-overlay"
-      :style="`background-image: url('${this.cover}?w=1280')`"
+      :style="`background-image: url('${this.cover}?w=1280&fl=progressive')`"
     ></div>
     <section class="container">
       <div class="columns is-desktop">
         <div class="column is-half">
           <hgroup>
-            <h1 class="title is-size-1 has-text-weight-light">
+            <h1 class="title is-1 has-text-weight-light">
               {{ description }}
             </h1>
             <h2 class="subtitle" v-html="copy"></h2>
@@ -23,7 +23,7 @@
                 </nuxt-link>
               </p>
               <p class="control">
-                <nuxt-link to="/mission" class="button is-rounded is-info">
+                <nuxt-link to="/mission" class="button is-rounded is-white">
                   Mission
                 </nuxt-link>
               </p>

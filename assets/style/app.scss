@@ -5,11 +5,14 @@ body {
     height: 100vh;
   }
 }
-.navbar-brand {
-  align-items: start;
-}
-.hero.is-dark a.navbar-item:hover {
-  background-color: transparent;
+
+.navbar {
+  .navbar-brand {
+    align-items: start;
+  }
+  .navbar-brand a.navbar-item.is-active {
+    background-color: transparent;
+  }
 }
 
 .hero {

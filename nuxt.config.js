@@ -48,6 +48,9 @@ export default {
       }
     }
   },
+  router: {
+    linkActiveClass: 'is-active'
+  },
   generate: {
     subFolders: false,
     fallback: true,

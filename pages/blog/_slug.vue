@@ -8,7 +8,9 @@
       <div class="hero-body">
         <div class="container">
           <hgroup>
-            <h5 class="has-text-weight-bold">Published {{ date }}</h5>
+            <h5 class="heading has-text-weight-bold">
+              Published {{ formatDate(date) }}
+            </h5>
             <h1 class="title is-1">{{ title }}</h1>
             <h2 class="subtitle">{{ description }}</h2>
           </hgroup>
@@ -28,6 +30,7 @@
 </template>
 
 <script>
+import moment from 'moment'
 import mixin from '@/mixins/entryMixin'
 
 export default {
@@ -37,6 +40,11 @@ export default {
       e => e.fields.slug === params.slug
     )
     return { entry }
+  },
+  methods: {
+    formatDate(date) {
+      return moment(date).format('dddd, MMMM Do, YYYY')
+    }
   }
 }
 </script>

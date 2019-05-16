@@ -13,7 +13,7 @@
         <div class="timeline-marker is-primary"></div>
         <div class="timeline-content">
           <p class="heading">
-            {{ milestone.fields.date.split('T')[0] }}
+            {{ formatDate(milestone.fields.date) }}
           </p>
           <p>
             {{ milestone.fields.title }} -
@@ -34,12 +34,19 @@
 </template>
 
 <script>
+import moment from 'moment'
+
 export default {
   computed: {
     milestones() {
       return require('~/static/data/blogPost.json').filter(
         e => e.fields.milestone === true
       )
+    }
+  },
+  methods: {
+    formatDate(date) {
+      return moment(date).format('MMMM, YYYY')
     }
   }
 }

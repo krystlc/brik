@@ -15,7 +15,7 @@
           />
         </div>
         <div class="control">
-          <button type="submit" class="button is-rounded is-info">
+          <button type="submit" class="button is-outlined is-info">
             Subscribe
           </button>
         </div>

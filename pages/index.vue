@@ -12,18 +12,17 @@
               {{ description }}
             </h1>
             <h2 class="subtitle" v-html="copy"></h2>
-            <hr />
             <div class="field is-grouped">
               <p class="control">
                 <nuxt-link
                   to="/prototypes"
-                  class="button is-rounded is-primary"
+                  class="button is-outlined is-primary"
                 >
                   Prototypes
                 </nuxt-link>
               </p>
               <p class="control">
-                <nuxt-link to="/mission" class="button is-rounded is-white">
+                <nuxt-link to="/mission" class="button is-outlined is-light">
                   Mission
                 </nuxt-link>
               </p>

@@ -2,7 +2,7 @@
   <main id="hero" class="hero-body is-overlay">
     <div
       class="hero-background is-overlay"
-      :style="`background-image: url('${this.cover}?w=1280&fl=progressive')`"
+      :style="`background-image: url('${cover}?w=1280&fl=progressive')`"
     ></div>
     <section class="container">
       <div class="columns is-desktop">

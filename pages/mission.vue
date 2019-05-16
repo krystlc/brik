@@ -27,47 +27,7 @@
       <div class="container">
         <div class="columns">
           <div class="column">
-            <h3 class="title is-2 has-text-centered has-text-weight-light">
-              Timeline
-            </h3>
-            <div class="timeline is-centered">
-              <header class="timeline-header">
-                <span class="tag is-medium is-primary">
-                  <i class="fa fa-seedling"></i
-                ></span>
-              </header>
-              <div class="timeline-item">
-                <div class="timeline-marker is-primary"></div>
-                <div class="timeline-content">
-                  <p class="heading">January 2016</p>
-                  <p>Timeline content - Can include any HTML element</p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-marker is-primary"></div>
-                <div class="timeline-content">
-                  <p class="heading">February 2016</p>
-                  <p>Timeline content - Can include any HTML element</p>
-                </div>
-              </div>
-              <header class="timeline-header">
-                <span class="tag is-primary">2017</span>
-              </header>
-              <div class="timeline-item">
-                <div class="timeline-marker is-danger is-icon">
-                  <i class="fa fa-flag"></i>
-                </div>
-                <div class="timeline-content">
-                  <p class="heading">March 2017</p>
-                  <p>Timeline content - Can include any HTML element</p>
-                </div>
-              </div>
-              <header class="timeline-header">
-                <span class="tag is-medium is-secondary">
-                  <i class="fa fa-ellipsis-h"></i
-                ></span>
-              </header>
-            </div>
+            <timeline />
           </div>
         </div>
       </div>
@@ -76,9 +36,11 @@
 </template>
 
 <script>
+import Timeline from '@/components/Timeline'
 import entryMixin from '@/mixins/entryMixin'
 
 export default {
+  components: { Timeline },
   mixins: [entryMixin],
   asyncData() {
     const entry = require('~/static/data/page.json').find(
@@ -88,7 +50,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-@import 'https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.5/bulma-timeline/dist/css/bulma-timeline.min.css';
-</style>

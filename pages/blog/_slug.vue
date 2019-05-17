@@ -43,6 +43,7 @@ export default {
   },
   methods: {
     formatDate(date) {
+      console.log(date)
       return moment(date).format('dddd, MMMM Do, YYYY')
     }
   }

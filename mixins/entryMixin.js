@@ -22,7 +22,7 @@ export default {
           ? this.entry.fields.date
           : this.entry.sys.updatedAt
       )
-      return date.toDateString()
+      return date
     }
   },
   head() {

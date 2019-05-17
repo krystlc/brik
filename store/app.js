@@ -20,11 +20,7 @@ export const state = () => ({
   socials: [
     {
       icon: 'twitter',
-      to: '/'
-    },
-    {
-      icon: 'kickstarter-k',
-      to: '/'
+      to: 'https://twitter.com/briklabs'
     }
   ]
 })

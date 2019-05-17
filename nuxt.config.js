@@ -55,9 +55,9 @@ export default {
     subFolders: false,
     fallback: true,
     routes: () => {
-      const pages = require('./static/data/page.json').map(
-        page => `${page.fields.slug}`
-      )
+      const pages = require('./static/data/page.json')
+        .filter(page => page.fields.simple === true)
+        .map(page => `${page.fields.slug}`)
       const prototypes = require('./static/data/prototype.json').map(
         proto => `/prototypes/${proto.fields.slug}`
       )

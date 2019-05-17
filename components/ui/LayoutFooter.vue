@@ -19,7 +19,7 @@
           <a
             v-for="(social, i) in socials"
             :key="i"
-            href="#"
+            :href="social.to"
             target="_blank"
             rel="noopener noreferrer"
             class="icon is-medium"

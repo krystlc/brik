@@ -4,7 +4,9 @@
       <div class="columns">
         <div class="column">
           <h1 class="title">{{ title }}</h1>
-          <div v-html="copy"></div>
+          <div class="content">
+            <div v-html="copy"></div>
+          </div>
         </div>
       </div>
     </section>

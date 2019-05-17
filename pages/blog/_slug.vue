@@ -20,8 +20,10 @@
     <section class="section">
       <div class="container">
         <div class="columns">
-          <div class="column is-half-desktop content">
-            <div v-html="copy"></div>
+          <div class="column is-half-desktop">
+            <div class="content">
+              <div v-html="copy"></div>
+            </div>
           </div>
         </div>
       </div>

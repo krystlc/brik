@@ -48,6 +48,13 @@ export default {
       }
     }
   },
+  loaders: {
+    vue: {
+      compilerOptions: {
+        preserveWhitespace: false
+      }
+    }
+  },
   router: {
     linkActiveClass: 'is-active'
   },

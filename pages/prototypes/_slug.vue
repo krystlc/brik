@@ -18,9 +18,7 @@
       <div class="container">
         <div class="columns is-centered">
           <div class="column is-two-thirds">
-            <div class="content">
-              <div v-html="copy"></div>
-            </div>
+            <div class="content" v-html="copy"></div>
           </div>
         </div>
       </div>

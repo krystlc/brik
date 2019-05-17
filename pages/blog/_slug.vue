@@ -21,9 +21,7 @@
       <div class="container">
         <div class="columns">
           <div class="column is-half-desktop">
-            <div class="content">
-              <div v-html="copy"></div>
-            </div>
+            <div class="content" v-html="copy"></div>
           </div>
         </div>
       </div>

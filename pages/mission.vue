@@ -19,7 +19,9 @@
     <section class="section">
       <div class="container">
         <div class="columns is-mobile is-centered">
-          <div class="column is-half-desktop" v-html="copy"></div>
+          <div class="column is-half-desktop">
+            <div class="content" v-html="copy"></div>
+          </div>
         </div>
       </div>
     </section>

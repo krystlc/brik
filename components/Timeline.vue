@@ -51,7 +51,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-@import 'https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.5/bulma-timeline/dist/css/bulma-timeline.min.css';
-</style>

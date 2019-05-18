@@ -1,12 +1,8 @@
 <template>
-  <main id="hero" class="hero-body is-overlay">
-    <div
-      class="hero-background is-overlay"
-      :style="`background-image: url('${cover}?w=1280&fl=progressive')`"
-    ></div>
+  <main id="hero" class="hero-body">
     <section class="container">
-      <div class="columns is-desktop">
-        <div class="column is-half">
+      <div class="columns">
+        <div class="column is-one-third-desktop">
           <hgroup>
             <h1 class="title is-1 has-text-weight-light">
               {{ description }}
@@ -45,6 +41,20 @@ export default {
       e => e.fields.slug === 'home'
     )
     return { entry }
+  },
+  mounted() {
+    document.body.style = `background-image: url('${
+      this.cover
+    }?w=1280&fl=progressive')`
+  },
+  beforeDestroy() {
+    document.body.style = ''
   }
 }
 </script>
+
+<style lang="scss">
+.hero.is-dark {
+  background-color: transparent;
+}
+</style>

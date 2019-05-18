@@ -54,7 +54,12 @@ export default {
 </script>
 
 <style lang="scss">
-.hero.is-dark {
+body {
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: cover;
+}
+.hero.is-fullheight.is-dark {
   background-color: transparent;
 }
 </style>

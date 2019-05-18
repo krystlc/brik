@@ -33,7 +33,7 @@
         </div>
       </div>
     </section>
-    <section class="section">
+    <section v-if="posts.length > 1" class="section">
       <div class="container">
         <div class="columns is-multiline is-centered">
           <div

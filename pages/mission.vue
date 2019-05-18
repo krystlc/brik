@@ -23,8 +23,8 @@
             <div class="content" v-html="copy"></div>
           </div>
         </div>
-        <div class="columns">
-          <div class="column">
+        <div class="columns is-centered">
+          <div class="column is-half-desktop">
             <timeline />
           </div>
         </div>

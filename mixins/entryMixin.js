@@ -17,12 +17,9 @@ export default {
       }
     },
     date() {
-      const date = new Date(
-        this.entry.fields.hasOwnProperty('date')
-          ? this.entry.fields.date
-          : this.entry.sys.updatedAt
-      )
-      return date
+      return this.entry.fields.hasOwnProperty('date')
+        ? this.entry.fields.date
+        : this.entry.sys.updatedAt
     }
   },
   head() {

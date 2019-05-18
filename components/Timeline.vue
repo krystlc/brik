@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import moment from 'moment'
+import { format } from 'date-fns'
 
 export default {
   computed: {
@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     formatDate(date) {
-      return moment(date).format('MMMM, YYYY')
+      return format(new Date(date), 'MMMM, y')
     }
   }
 }

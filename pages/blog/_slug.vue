@@ -9,7 +9,7 @@
         <div class="container">
           <hgroup>
             <h5 class="heading has-text-weight-bold">
-              Published {{ formatDate(date) }}
+              {{ formatDate(date) }}
             </h5>
             <h1 class="title is-1">{{ title }}</h1>
             <h2 class="subtitle">{{ description }}</h2>
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import moment from 'moment'
+import { format } from 'date-fns'
 import mixin from '@/mixins/entryMixin'
 
 export default {
@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     formatDate(date) {
-      return moment(date).format('dddd, MMMM Do, YYYY')
+      return format(new Date(date), 'eeee, MMMM d, y')
     }
   }
 }

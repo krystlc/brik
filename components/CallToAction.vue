@@ -6,7 +6,7 @@
     </p>
     <form
       name="contact"
-      action="/thank-you"
+      action="/subscribed"
       method="post"
       netlify-honeypot="bot-field"
       netlify

@@ -1,8 +1,10 @@
 # website
 
-> Sustainable agriculture technology
+> Sustainable agriculture technology.
 
 ## Build Setup
+
+Rename `.env.example` to `.env` and add Contentful token credentials.
 
 ``` bash
 # install dependencies
